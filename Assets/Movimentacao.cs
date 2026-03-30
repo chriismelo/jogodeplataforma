@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Movimentacao : MonoBehaviour
 {
+    float frameAtual;
+    bool pulando;
+    float inicioPulo;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +21,7 @@ public class Movimentacao : MonoBehaviour
 
 
        if (Input.GetKey("a")) {
-            this.transform.Translate(-0.05, 0, 0);
+            this.transform.Translate(-0.05f, 0, 0);
 
             if (Input.GetKey("space") && pulando == false && Physics.CheckSphere(transform.position, 2f))
                 pulando = true;
@@ -29,6 +32,9 @@ public class Movimentacao : MonoBehaviour
 }
         if (pulando)
         {
-            this.transform.Translate(0, 0.05, 0);
+            this.transform.Translate(0, 0.05f, 0);
 
         }
+
+    }
+    }
